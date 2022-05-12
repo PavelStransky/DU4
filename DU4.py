@@ -6,7 +6,7 @@ generator = np.random.default_rng()
 
 def main():
     print("10 ľudí:")
-    print(birthday_coincidence_probability(10))   #pravdepodobnosť 11% pre 10 ľudí
+    print(birthday_coincidence_probability(10))     #pravdepodobnosť 11% pre 10 ľudí
     
     pravdepodobnosť = 0
     group_size = 10
@@ -22,7 +22,11 @@ def main():
 def birthday_coincidence_probability(group_size):
     hits = 0
 
-    for _ in range(100000):
+    n = 100000  # Vždy, pokud se Vám nějaké číslo v programu opakuje, je dobré pro něj zavést proměnnou
+                # (a pokud se Vám neopakuje, tak také).
+                # Zamezí to zbytečným chybám, pokud toto číslo budete chtít změnit
+
+    for _ in range(n):
         birthdays = np.sort(generator.integers(1, 366, size=group_size))
     
         lastBirthday = 0                   
@@ -32,8 +36,8 @@ def birthday_coincidence_probability(group_size):
                 break
             lastBirthday = birthday
     
-    probability = hits / 100000
-    error = np.sqrt(hits) / 100000
+    probability = hits / n
+    error = np.sqrt(hits) / n
 
     return probability, error
 

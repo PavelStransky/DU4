@@ -1,0 +1,5 @@
+Oba dva programy počítají správně. Jen formální komentáře:
+- Je dobrou praxí nemíchat různé jazyky při pojmenování proměnných
+- Taktéž se nedoporučuje používat speciální znaky v pojmenování proměnných - Python s tím nemá problém, ale některé editory s tím problém mít mohou.
+  Nikdy předem nevíte, v jakém prostředí budete program spouštět.
+- Drobné komentáře jsou i v kódu
